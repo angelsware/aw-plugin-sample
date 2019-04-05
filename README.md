@@ -4,7 +4,7 @@ Sample plugin for Angels' Ware rendering engine.
 
 ### Getting Started
 
-Add the plugins section the config.json file of your project.
+Add the **plugins** section the **config.json** file of your project.
 
 ```
 {
@@ -13,7 +13,7 @@ Add the plugins section the config.json file of your project.
 	"plugins":[
 		{
 			"repo":"https://github.com/angelsware/aw-plugin-sample.git",
-			"tag":"*",
+			"tag":"0.2.1",
 			"variables":[
 				{
 					"name":"Message",
