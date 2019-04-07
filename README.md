@@ -13,7 +13,7 @@ Add the **plugins** section the **config.json** file of your project.
 	"plugins":[
 		{
 			"repo":"https://github.com/angelsware/aw-plugin-sample.git",
-			"tag":"0.2.1",
+			"tag":"0.2.2",
 			"variables":[
 				{
 					"name":"Message",
