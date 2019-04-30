@@ -1,6 +1,9 @@
 cmake_minimum_required (VERSION 3.0)
 project(aw-plugin-sample)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -pedantic -Wno-variadic-macros")
+
 if("${target}" MATCHES "windows")
 	set(TARGET_WIN32 True)
 elseif("${target}" MATCHES "linux")
