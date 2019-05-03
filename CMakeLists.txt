@@ -2,7 +2,6 @@ cmake_minimum_required (VERSION 3.0)
 project(aw-plugin-sample)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -pedantic -Wno-variadic-macros")
 
 if("${target}" MATCHES "windows")
 	set(TARGET_WIN32 True)
@@ -18,7 +17,9 @@ else()
 	message(FATAL_ERROR "missing target. -Dtarget=<target> (windows,linux,android,ios,emscripten)")
 endif()
 
-aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}/src/common" source_files)
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/common")
+	aux_source_directory("${CMAKE_CURRENT_SOURCE_DIR}/src/common" source_files)
+endif()
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/${target}")
 	aux_source_directory("src/${target}" source_files)
 elseif(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/default")
@@ -30,5 +31,4 @@ add_library("${PROJECT_NAME}" STATIC ${source_files} ${header_files})
 
 include_directories("$ENV{AW_HOME}/include")
 target_include_directories("${PROJECT_NAME}" PUBLIC "include")
-set_target_properties("${PROJECT_NAME}" PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib/${target})
-
+set_target_properties("${PROJECT_NAME}" PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../../lib/${target})
