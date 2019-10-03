@@ -16,8 +16,7 @@ Add the **plugins** section to the **config.json** file of your project.
 			"tag":"*",
 			"variables":[
 				{
-					"name":"Message",
-					"value":"Hello World!"
+					"Message":"Hello World!"
 				}
 			]
 		}
